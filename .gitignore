@@ -1,0 +1,19 @@
+.git/
+
+# IDE
+.idea/
+
+# Virtual environment
+.venv/
+
+# Compiled executables
+dist/
+
+# Model files
+models/
+
+# Output directory
+output/
+
+# Log files
+*.log
