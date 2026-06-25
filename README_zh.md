@@ -38,64 +38,56 @@ LYC_Individual_recognition_demo/
 ├── process_result.spec     # process_result编译配置
 └── README.md                # 项目说明文档
 ```
+## 准备工作
 
-## 快速开始
+1. **创建虚拟环境并安装依赖**
 
-### 方式一：直接运行Python源码（推荐用于开发调试）
-
-**前置条件**：已安装 `uv` 工具
-
-1. **创建虚拟环境**
    ```bash
+   # 创建虚拟环境
    uv venv --python 3.10
-   ```
 
-2. **激活虚拟环境并安装依赖**
-   ```bash
-   # Windows
+   # 激活虚拟环境
    .venv\Scripts\activate
-   
+
    # 安装依赖
    uv pip install -r requirements.txt
    ```
 
-3. **运行识别**
-   在命令行中执行：
-   ```bash
-   bash shell/predict_image_exe.sh
-   ```
+2. **下载模型文件**
 
-### 方式二：使用编译后的可执行文件（推荐用于分发）
+   从 [Releases 页面](https://github.com/lazyn1997/LYC_Individual_recognition_demo/releases) 下载 `models.zip`，解压到项目根目录（即 `LYC_Individual_recognition_demo/` 下应出现 `models/` 文件夹）
 
-详见下方"编译"章节，编译完成后双击 `predict_image_exe.bat` 即可运行，无需Python环境！
+## 快速开始
 
-## 编译
+### 方式一：直接运行（推荐用于开发调试）
 
-### 为什么需要编译？
+在命令行中执行[predict_image_exe.sh](shell/predict_image_exe.sh)脚本，调用[scripts](scripts)中的源码进行识别
+```bash
+bash shell/predict_image_exe.sh
+```
+
+
+### 方式二：编译后运行（推荐用于分发）
+
+#### 为什么需要编译？
 编译后生成的可执行文件可以拷贝到**没有安装Python及相关依赖库**的电脑上直接运行！
 
-### 编译步骤
+#### 编译步骤
 
-1. **确保虚拟环境已创建并激活**
+1. **激活虚拟环境**
    ```bash
-   uv venv --python 3.10
    .venv\Scripts\activate
    ```
 
-2. **安装依赖**
-   ```bash
-   uv pip install -r requirements.txt
-   ```
-
-3. **开始编译**
+2. **开始编译**
    双击运行 `build_exe.bat`
 
-4. **编译输出**
+3. **编译输出**
    - `dist/predict/` - 识别程序（文件夹模式）
    - `dist/process_result.exe` - 结果处理程序（单文件模式）
 
 ### 编译后使用
-直接双击 `predict_image_exe.bat` 即可运行！
+直接双击 `predict_image_exe.bat` 即可运行，无需Python环境！
 
 ## 参数修改说明
 

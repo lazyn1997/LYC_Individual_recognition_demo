@@ -39,63 +39,55 @@ LYC_Individual_recognition_demo/
 └── README_en.md             # Project documentation (English)
 ```
 
-## Quick Start
+## Prerequisites
 
-### Option 1: Run Python source code directly (recommended for development)
-
-**Prerequisites**: `uv` tool installed
-
-1. **Create virtual environment**
+1. **Create virtual environment and install dependencies**
    ```bash
+   # Create virtual environment
    uv venv --python 3.10
-   ```
 
-2. **Activate virtual environment and install dependencies**
-   ```bash
-   # Windows
+   # Activate virtual environment
    .venv\Scripts\activate
-   
+
    # Install dependencies
    uv pip install -r requirements.txt
    ```
 
-3. **Run recognition**
-   Run in command line:
-   ```bash
-   bash shell/predict_image_exe.sh
-   ```
+2. **Download model files**
 
-### Option 2: Use compiled executable (recommended for distribution)
+   Download `models.zip` from the [Releases page](https://github.com/lazyn1997/LYC_Individual_recognition_demo/releases), and extract it to the project root directory (so that `models/` folder appears under `LYC_Individual_recognition_demo/`)
 
-See "Compilation" section below. After compilation, double-click `predict_image_exe.bat` to run without Python environment!
+## Quick Start
 
-## Compilation
+### Option 1: Run directly (recommended for development)
 
-### Why compile?
+Execute the [predict_image_exe.sh](shell/predict_image_exe.sh) script in command line, which calls the source code in [scripts](scripts) for recognition
+```bash
+bash shell/predict_image_exe.sh
+```
+
+
+### Option 2: Compile then run (recommended for distribution)
+
+#### Why compile?
 Compiled executables can be copied to computers **without Python or any dependencies installed** and run directly!
 
-### Compilation Steps
+#### Compilation Steps
 
-1. **Ensure virtual environment is created and activated**
+1. **Activate virtual environment**
    ```bash
-   uv venv --python 3.10
    .venv\Scripts\activate
    ```
 
-2. **Install dependencies**
-   ```bash
-   uv pip install -r requirements.txt
-   ```
-
-3. **Start compilation**
+2. **Start compilation**
    Double-click `build_exe.bat`
 
-4. **Compilation Output**
+3. **Compilation Output**
    - `dist/predict/` - Recognition program (folder mode)
    - `dist/process_result.exe` - Result processing program (single-file mode)
 
-### Usage after compilation
-Simply double-click `predict_image_exe.bat` to run!
+#### Usage after compilation
+Simply double-click `predict_image_exe.bat` to run without Python environment!
 
 ## Parameter Configuration Guide
 
